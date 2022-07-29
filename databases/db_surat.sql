@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Waktu pembuatan: 21 Feb 2022 pada 03.48
--- Versi server: 10.4.20-MariaDB
--- Versi PHP: 7.3.29
+-- Host: localhost
+-- Generation Time: Jul 29, 2022 at 02:31 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `agenda`
+-- Table structure for table `agenda`
 --
 
 CREATE TABLE `agenda` (
@@ -35,17 +35,18 @@ CREATE TABLE `agenda` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `agenda`
+-- Dumping data for table `agenda`
 --
 
 INSERT INTO `agenda` (`id_agenda`, `tgl_agenda`, `surat_masuk_id`, `menghadiri`) VALUES
 (1, '2022-02-10', '9', 'a'),
-(2, '2022-02-26', '8', 'f');
+(2, '2022-02-26', '8', 'f'),
+(3, '2022-07-29', '10', 'pak iwan');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `akun`
+-- Table structure for table `akun`
 --
 
 CREATE TABLE `akun` (
@@ -59,19 +60,19 @@ CREATE TABLE `akun` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `akun`
+-- Dumping data for table `akun`
 --
 
 INSERT INTO `akun` (`id_akun`, `username`, `password`, `level`, `bidang`, `jabatan`, `nama`) VALUES
 (1, 'admin666', 'fae0b27c451c728867a567e8c1bb4e53', 'admin', 'tes', 'tes2', 'tes3'),
-(3, '123', '202cb962ac59075b964b07152d234b70', 'admin', 'tes', 'tes2', 'tes3'),
+(3, '123', '202cb962ac59075b964b07152d234b70', 'user', 'tes', 'tes2', 'tes3'),
 (4, 'nadi', 'a6d91358169c3540346213cbcb439322', 'user', 'Pengadaan', 'Kepala', 'nadi'),
 (5, 'eddy', '5aa8fed9741d33c63868a87f1af05ab7', 'user', 'Pengadaan', 'Kepala', 'Eddy Adha Saputra');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `disposisi`
+-- Table structure for table `disposisi`
 --
 
 CREATE TABLE `disposisi` (
@@ -82,7 +83,7 @@ CREATE TABLE `disposisi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `disposisi`
+-- Dumping data for table `disposisi`
 --
 
 INSERT INTO `disposisi` (`id_disposisi`, `jabatan`, `isi_disposisi`, `id_suratm`) VALUES
@@ -92,12 +93,13 @@ INSERT INTO `disposisi` (`id_disposisi`, `jabatan`, `isi_disposisi`, `id_suratm`
 (5, 'Kepala', 'jalan jalan', '9'),
 (6, 'sasas', 'sasa', '9'),
 (7, 'asassa', 'assaas', '8'),
-(8, 'assaasas', 'waaaa', '9');
+(8, 'assaasas', 'waaaa', '9'),
+(9, 'pak eddy', 'bidding Kepegawaian', '10');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `surat_izin`
+-- Table structure for table `surat_izin`
 --
 
 CREATE TABLE `surat_izin` (
@@ -110,7 +112,7 @@ CREATE TABLE `surat_izin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `surat_izin`
+-- Dumping data for table `surat_izin`
 --
 
 INSERT INTO `surat_izin` (`id_surat_izin`, `keperluan`, `dari_tanggal`, `sampai_tanggal`, `akun_izin`, `bulan_si`) VALUES
@@ -123,7 +125,7 @@ INSERT INTO `surat_izin` (`id_surat_izin`, `keperluan`, `dari_tanggal`, `sampai_
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `surat_keluar`
+-- Table structure for table `surat_keluar`
 --
 
 CREATE TABLE `surat_keluar` (
@@ -137,7 +139,7 @@ CREATE TABLE `surat_keluar` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `surat_keluar`
+-- Dumping data for table `surat_keluar`
 --
 
 INSERT INTO `surat_keluar` (`id_surat_keluar`, `tanggal_surat`, `tujuan_surat`, `nomor_surat`, `perihal`, `file_surat`, `bulan_skeluar`) VALUES
@@ -151,7 +153,7 @@ INSERT INTO `surat_keluar` (`id_surat_keluar`, `tanggal_surat`, `tujuan_surat`, 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `surat_masuk`
+-- Table structure for table `surat_masuk`
 --
 
 CREATE TABLE `surat_masuk` (
@@ -168,7 +170,7 @@ CREATE TABLE `surat_masuk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `surat_masuk`
+-- Dumping data for table `surat_masuk`
 --
 
 INSERT INTO `surat_masuk` (`id_surat_masuk`, `nama_surat`, `no_surat`, `tgl_s_masuk`, `tgl_t_sm`, `asal_surat_masuk`, `perihal`, `file_surat`, `disposisi`, `bulan_smasuk`) VALUES
@@ -179,87 +181,88 @@ INSERT INTO `surat_masuk` (`id_surat_masuk`, `nama_surat`, `no_surat`, `tgl_s_ma
 (6, 'asas', 'asas', '2022-10-08', '2022-10-22', 'sasa', 'sa', '', '1', '10'),
 (7, 'zzzz', 'zzzz', '2022-02-08', '2022-02-08', 'zzzz', 'zzz', '2111NA7796.pdf', '1', '02'),
 (8, 'tessss 222', 'tttt', '2022-02-08', '2022-02-10', 'tttt', 'tttt\"\"\"', '', '1', '02'),
-(9, 'dispo', 'dispo', '2022-02-10', '2022-02-11', 'dispo', 'dispo', 'bugatti_veyron_main_1.jpg', '', '02');
+(9, 'dispo', 'dispo', '2022-02-10', '2022-02-11', 'dispo', 'dispo', 'bugatti_veyron_main_1.jpg', '', '02'),
+(10, 'tes', 'saas', '2022-07-29', '2022-07-29', 'dinas', 'salsas', '', '', '07');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `agenda`
+-- Indexes for table `agenda`
 --
 ALTER TABLE `agenda`
   ADD PRIMARY KEY (`id_agenda`);
 
 --
--- Indeks untuk tabel `akun`
+-- Indexes for table `akun`
 --
 ALTER TABLE `akun`
   ADD PRIMARY KEY (`id_akun`);
 
 --
--- Indeks untuk tabel `disposisi`
+-- Indexes for table `disposisi`
 --
 ALTER TABLE `disposisi`
   ADD PRIMARY KEY (`id_disposisi`);
 
 --
--- Indeks untuk tabel `surat_izin`
+-- Indexes for table `surat_izin`
 --
 ALTER TABLE `surat_izin`
   ADD PRIMARY KEY (`id_surat_izin`);
 
 --
--- Indeks untuk tabel `surat_keluar`
+-- Indexes for table `surat_keluar`
 --
 ALTER TABLE `surat_keluar`
   ADD PRIMARY KEY (`id_surat_keluar`);
 
 --
--- Indeks untuk tabel `surat_masuk`
+-- Indexes for table `surat_masuk`
 --
 ALTER TABLE `surat_masuk`
   ADD PRIMARY KEY (`id_surat_masuk`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `agenda`
+-- AUTO_INCREMENT for table `agenda`
 --
 ALTER TABLE `agenda`
-  MODIFY `id_agenda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_agenda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `akun`
+-- AUTO_INCREMENT for table `akun`
 --
 ALTER TABLE `akun`
   MODIFY `id_akun` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `disposisi`
+-- AUTO_INCREMENT for table `disposisi`
 --
 ALTER TABLE `disposisi`
-  MODIFY `id_disposisi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_disposisi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT untuk tabel `surat_izin`
+-- AUTO_INCREMENT for table `surat_izin`
 --
 ALTER TABLE `surat_izin`
   MODIFY `id_surat_izin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT untuk tabel `surat_keluar`
+-- AUTO_INCREMENT for table `surat_keluar`
 --
 ALTER TABLE `surat_keluar`
   MODIFY `id_surat_keluar` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT untuk tabel `surat_masuk`
+-- AUTO_INCREMENT for table `surat_masuk`
 --
 ALTER TABLE `surat_masuk`
-  MODIFY `id_surat_masuk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_surat_masuk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
