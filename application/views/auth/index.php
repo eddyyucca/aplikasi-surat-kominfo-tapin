@@ -1,4 +1,4 @@
-<body class="bg-gradient-success">
+<body class="bg-gradient-primary">
 	<div class="mbr-slider slide carousel" data-keyboard="false" data-ride="carousel" data-interval="2000" data-pause="true">
 		<div class="container">
 			<!-- Outer Row -->
@@ -12,7 +12,7 @@
 									<div class="p-5">
 										<div class="text-center">
 
-											<img src="<?= base_url('assets/logokominfo.jpg') ?>" width="100px">
+											<img src="<?= base_url('assets/logokominfo.png') ?>" width="100px">
 											<br>
 											<h3>APLIKASI SURAT DINAS KOMUNKIASI DAN INFORMATIKA KABUPATEN TAPIN</h3>
 											<hr>

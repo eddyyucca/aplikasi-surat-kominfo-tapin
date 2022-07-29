@@ -2,7 +2,7 @@
     <!-- Page Heading -->
     <table>
         <tr align="left">
-            <th rowspan="2"><img src="<?= base_url('assets/cop_surat.png') ?>" width="100%">
+            <th rowspan="2"><img src="<?= base_url('assets/cop_surat1.png') ?>" width="100%">
             </th>
         </tr>
     </table>
